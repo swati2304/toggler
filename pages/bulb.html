@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Toggler</title>
+    <style>
+        .heading{
+            color: blueviolet;
+            text-align: center;
+            font-size: 30px;
+        }
+        .img{
+            height: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .container{
+            display: flex;
+            justify-content: space-around;
+        }
+        .btn{
+            font-size: 25px;
+            width: 200px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Toggle Bulb 💡</h1>
+    <img src="../img/bulb-off.jpg" class="img" id="img"/>
+    <div class="container">
+        <button class="btn" onclick="bulbon()">ON 🔛</button>
+        <button class="btn" onclick="bulboff()">OFF 📴</button>
+    </div>
+    <script>
+        function bulbon(){
+           const bulbon = document.getElementById('img')
+           bulbon.src = "../img/bulb-on.jpg";
+        }
+        
+        function bulboff(){
+           const bulbon = document.getElementById('img')
+           bulbon.src = "../img/bulb-off.jpg";
+        }
+    </script>
+</body>
+</html>

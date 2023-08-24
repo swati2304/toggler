@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark/Light Theme Toggler</title>
+    <style>
+      .body-light {
+        background-color: azure;
+        color: black;
+      }
+      .body-dark {
+        background-color: black;
+        color: aquamarine;
+      }
+      .head {
+        text-align: center;
+      }
+      .btn {
+        background-color: blueviolet;
+        font-size: 25px;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+      }
+      .container{
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body class="body-light" id="body">
+    <h1 class="head">Dark / Light Theme Toggler</h1>
+    <div class="container">
+      <button class="btn" onclick="darktheme()">Dark</button>
+      <button class="btn" onclick="lightheme()">Light</button>
+    </div>
+    <script>
+      function darktheme() {
+        const dark = document.getElementById('body');
+        dark.classList.remove("body-light");
+        dark.classList.add("body-dark");
+      }
+
+      function lightheme(){
+        const light = document.getElementById('body')
+        light.classList.remove('body-dark');
+        light.classList.add('body-light');
+      }
+    </script>
+  </body>
+</html>
