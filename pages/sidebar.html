@@ -10,10 +10,15 @@
             font-size: 30px;
             text-align: center;
         }
-        .container{
+        .sidebar{
+            height: 100vh;
+            width: 200px;
+            background-color: rgb(238, 233, 243);
+            position: fixed;
+            top: 0;
+            left: 0;
             display: flex;
             flex-direction: column;
-            width: 100px;
         }
         .btn{
             background-color: blueviolet;
@@ -23,17 +28,47 @@
             font-size: 25px;
             color: crimson;
             margin: 10px;
+            margin-top: 20px;
+            padding: 5px;
+            border: none;
+        }
+        .sidebar-closed{
+            margin-left: -170px;
+        }
+        .img{
+            margin: 300px;
+            height: 50px;
         }
     </style>
 </head>
 <body>
     <h1 class="heading">Sidebar Ⓜ️</h1>
-    <div class="container-fluid">
+
+    <img src="../img/plays.png" class="img" onclick="togglesidebar()"/>
+    
+    <div class="sidebar sidebar-closed" id="sidebar">
         <button class="btn">Home</button>
         <button class="btn">About us</button>
         <button class="btn">Gallery</button>
         <button class="btn">Contact</button>
         <button class="btn">Help</button>
     </div>
+
+    <script>
+        let isOpen = false;
+        function togglesidebar() 
+        {
+            const sidebar = document.getElementById('sidebar');
+            if(isOpen){
+                sidebar.classList.add('sidebar-closed');
+                isOpen = false;
+            }
+            else{
+                sidebar.classList.remove('sidebar-closed');
+                isOpen = true;
+            }     
+        }
+    </script>
+
 </body>
 </html>
