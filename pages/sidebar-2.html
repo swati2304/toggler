@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <style>
+        .main{
+            display: flex;
+            flex-direction: column;
+            height: 120vh;
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            background-color: cornflowerblue;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .menus{
+            background-color: darkorchid;
+            height: 50px;
+            width: 150px;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 20px;
+        }
+        .img{
+            margin: 350px;
+            height: 50px;
+        }
+        .main-closed{
+            margin: -200px;
+        }
+        .name{
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 80px;
+            width: 300vh;
+            background-color: darkmagenta;
+            font-size: 50px;
+            color: antiquewhite;
+            text-align: right;
+        }
+        .name-closed{
+            margin: -60px;
+        }
+        .heading{
+            color: darkblue;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Sidebar</h1>
+    <img src="../img/plays.png" class="img" onclick="togglesidebar()"/>
+    <div class="main main-closed" id="main-sidebar">
+        <button class="menus">Home</button>
+        <button class="menus">Contact</button>
+        <button class="menus">About us</button>
+        <button class="menus">Home</button>
+        <button class="menus">Logout</button>
+        <button class="menus">Gallery</button>
+        <button class="menus">Help</button>
+    </div>
+
+    <div class="name name-closed" onclick="namebar()" id="name">Swati Nimje</div>
+
+    <script>
+        let isOpen = false;
+        function togglesidebar()
+        {
+            const sidebar = document.getElementById('main-sidebar')
+            if(isOpen){
+                sidebar.classList.add('main-closed')
+                isOpen=false;
+            }
+            else{
+                sidebar.classList.remove('main-closed')
+                isOpen=true;
+            }
+        }
+
+        let namebaropen = false;
+        function namebar()
+        {
+            const namebar = document.getElementById('name')
+            if(open){
+                namebar.classList.add('name-closed')
+                open = false;
+            }
+            else{
+                namebar.classList.remove('name-closed')
+                open = true;
+            }
+        }
+
+    </script>
+</body>
+</html>
